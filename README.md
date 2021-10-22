@@ -1,6 +1,6 @@
 # Escolafront
 
-Para executar essa aplicação, deverá ter instalado o node.js instalado na maquina.
+Para executar essa aplicação, deverá ter instalado o `node.js` instalado na maquina.
 
 
 Na pasta raiz da aplicação, deve ser executado no terminal o comando `ng serve`.
