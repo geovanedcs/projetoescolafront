@@ -1,0 +1,183 @@
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">Aluno: Maria</th>
+    <th scope="col">Participação em sala de aula</th>
+    <th scope="col">Entrega das tarefas</th>
+    <th scope="col">Trabalho bimestral</th>
+    <th scope="col">Prova bimestral</th>
+    <th scope="col">Faltas</th>
+    <th scope="col">Nota Parcial</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1° Bimestre</th>
+    <td>{{notap1[0]}}</td>
+    <td>{{notap1[1]}}</td>
+    <td>{{notap1[2]}}</td>
+    <td>{{notap1[3]}}</td>
+    <td>{{notap1[4]}}</td>
+    <td>{{mediap1()}}</td>
+  </tr><tr>
+    <th scope="row">2° Bimestre</th>
+    <td>{{notap2[0]}}</td>
+    <td>{{notap2[1]}}</td>
+    <td>{{notap2[2]}}</td>
+    <td>{{notap2[3]}}</td>
+    <td>{{notap2[4]}}</td>
+    <td>{{mediap2()}}</td>
+  </tr><tr>
+    <th scope="row">3° Bimestre</th>
+    <td>{{notap3[0]}}</td>
+    <td>{{notap3[1]}}</td>
+    <td>{{notap3[2]}}</td>
+    <td>{{notap3[3]}}</td>
+    <td>{{notap3[4]}}</td>
+    <td>{{mediap3()}}</td>
+  </tr><tr>
+    <th scope="row">4° Bimestre</th>
+    <td>{{notap4[0]}}</td>
+    <td>{{notap4[1]}}</td>
+    <td>{{notap4[2]}}</td>
+    <td>{{notap4[3]}}</td>
+    <td>{{notap4[4]}}</td>
+    <td>{{mediap4()}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="container-fluid">
+  <div><p>{{estado}}</p></div>
+  <button type="button" class="btn btn-primary"  (click)="exibirEstado()">Verificar estado</button>
+</div>
+
+
+<div>
+  <div>
+    Primeiro Bimestre
+  </div>
+  <form>
+    <div class="row align-items-center g-3">
+      <div class="col-md-2">
+        <label for="part1">Participação em Aula</label>
+        <input type="number" class="form-control" id="part1" placeholder="Participação" (input)="recuperaPT($event)" [value]="notaParticipacao">
+      </div>
+      <div class="col-md-2">
+        <label for="tarefa1">Entrega de tarefas</label>
+        <input type="number" class="form-control" id="tarefa1" placeholder="Entrega de tarefas"  (input)="recuperaTarefa($event)" [value]="notaTarefa">
+      </div>
+      <div class="col-md-2">
+        <label for="trabalho1">Trabalho</label>
+        <input type="number" class="form-control" id="trabalho1" placeholder="Trabalho" (input)="recuperaTrabalho($event)" [value]="notaTrabalho">
+      </div>
+      <div class="col-md-2">
+        <label for="prova1">Prova</label>
+        <input type="number" class="form-control" id="prova1" placeholder="Prova" (input)="recuperaProva($event)" [value]="notaProva">
+      </div>
+      <div class="col-md-2">
+        <label for="faltas">Faltas</label>
+        <input type="number" class="form-control" id="faltas" placeholder="Faltas" (input)="recuperaFaltas($event)" [value]="faltas">
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="calculaBimestre()">Lançar Bimestre</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div>
+  <div>
+    Segundo Bimestre
+  </div>
+  <form>
+    <div class="row align-items-center g-3">
+      <div class="col-md-2">
+        <label for="part2">Participação em Aula</label>
+        <input type="number" class="form-control" id="part2" placeholder="Participação" (input)="recuperaPT2($event)" [value]="notaParticipacao">
+      </div>
+      <div class="col-md-2">
+        <label for="tarefa2">Entrega de tarefas</label>
+        <input type="number" class="form-control" id="tarefa2" placeholder="Entrega de tarefas"  (input)="recuperaTarefa2($event)" [value]="notaTarefa">
+      </div>
+      <div class="col-md-2">
+        <label for="trabalho2">Trabalho</label>
+        <input type="number" class="form-control" id="trabalho2" placeholder="Trabalho" (input)="recuperaTrabalho2($event)" [value]="notaTrabalho">
+      </div>
+      <div class="col-md-2">
+        <label for="prova2">Prova</label>
+        <input type="number" class="form-control" id="prova2" placeholder="Prova" (input)="recuperaProva2($event)" [value]="notaProva">
+      </div>
+      <div class="col-md-2">
+        <label for="faltas2">Faltas</label>
+        <input type="number" class="form-control" id="faltas2" placeholder="Faltas" (input)="recuperaFaltas2($event)" [value]="faltas">
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="calculaBimestre2()">Lançar Bimestre</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div>
+  <div>
+    Terceiro Bimestre
+  </div>
+  <form>
+    <div class="row align-items-center g-3">
+      <div class="col-md-2">
+        <label for="part3">Participação em Aula</label>
+        <input type="number" class="form-control" id="part3" placeholder="Participação" (input)="recuperaPT3($event)" [value]="notaParticipacao">
+      </div>
+      <div class="col-md-2">
+        <label for="tarefa3">Entrega de tarefas</label>
+        <input type="number" class="form-control" id="tarefa3" placeholder="Entrega de tarefas"  (input)="recuperaTarefa3($event)" [value]="notaTarefa">
+      </div>
+      <div class="col-md-2">
+        <label for="trabalho3">Trabalho</label>
+        <input type="number" class="form-control" id="trabalho3" placeholder="Trabalho" (input)="recuperaTrabalho3($event)" [value]="notaTrabalho">
+      </div>
+      <div class="col-md-2">
+        <label for="prova3">Prova</label>
+        <input type="number" class="form-control" id="prova3" placeholder="Prova" (input)="recuperaProva3($event)" [value]="notaProva">
+      </div>
+      <div class="col-md-2">
+        <label for="faltas3">Faltas</label>
+        <input type="number" class="form-control" id="faltas3" placeholder="Faltas" (input)="recuperaFaltas3($event)" [value]="faltas">
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="calculaBimestre3()">Lançar Bimestre</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div>
+  <div>
+    Quarto Bimestre
+  </div>
+  <form>
+    <div class="row align-items-center g-3">
+      <div class="col-md-2">
+        <label for="part4">Participação em Aula</label>
+        <input type="number" class="form-control" id="part4" placeholder="Participação" (input)="recuperaPT4($event)" [value]="notaParticipacao">
+      </div>
+      <div class="col-md-2">
+        <label for="tarefa4">Entrega de tarefas</label>
+        <input type="number" class="form-control" id="tarefa4" placeholder="Entrega de tarefas"  (input)="recuperaTarefa4($event)" [value]="notaTarefa">
+      </div>
+      <div class="col-md-2">
+        <label for="trabalho4">Trabalho</label>
+        <input type="number" class="form-control" id="trabalho4" placeholder="Trabalho" (input)="recuperaTrabalho4($event)" [value]="notaTrabalho">
+      </div>
+      <div class="col-md-2">
+        <label for="prova4">Prova</label>
+        <input type="number" class="form-control" id="prova4" placeholder="Prova" (input)="recuperaProva4($event)" [value]="notaProva">
+      </div>
+      <div class="col-md-2">
+        <label for="faltas4">Faltas</label>
+        <input type="number" class="form-control" id="faltas4" placeholder="Faltas" (input)="recuperaFaltas4($event)" [value]="faltas">
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="calculaBimestre4()">Lançar Bimestre</button>
+      </div>
+    </div>
+  </form>
+</div>

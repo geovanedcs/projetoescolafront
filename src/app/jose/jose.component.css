@@ -1,0 +1,10 @@
+.row {
+  padding-left: 30px;
+}
+.col-md-2 {
+  padding: 10px;
+}
+.container-fluid {
+  padding-bottom: 25px;
+  text-align: center;
+}
